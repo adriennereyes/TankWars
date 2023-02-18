@@ -4,28 +4,36 @@ using UnityEngine;
 
 public class TankController : MonoBehaviour
 {
-    [SerializeField] private float speed = 5f; // Speed of the tank's movement
+    public float moveSpeed = 5.0f;
+    private Animator animator;
+    private Rigidbody2D rigidbody2d;
     private Transform canonTransform; // Assign the cannon child object here in the Inspector
     public float rotationSpeed; // Adjust this to change the speed of rotation
 
     // Start is called before the first frame update
     void Start()
     {
-        canonTransform = transform.Find("canon");
+        animator = GetComponentInChildren<Animator>();
+        rigidbody2d = GetComponentInChildren<Rigidbody2D>();
+        canonTransform = transform.Find("tankbody").transform.Find("tankcanon");
         rotationSpeed = 30f;
     }
 
     // Update is called once per frame
     void Update()
     {
-        // Get the horizontal input from the player
-        float horizontalInput = Input.GetAxis("Horizontal");
+        float horizontalInput = Input.GetAxisRaw("Horizontal");
 
-        // Calculate the movement vector
-        Vector3 movement = new Vector3(horizontalInput, 0f, 0f) * speed * Time.deltaTime;
-
-        // Move the tank's body and gun using the movement vector
-        transform.Translate(movement);
+        if (horizontalInput < 0) {
+            animator.SetBool("isMoving", true);
+            rigidbody2d.velocity = new Vector2(-moveSpeed, 0);
+        } else if (horizontalInput > 0) {
+            animator.SetBool("isMoving", true);
+            rigidbody2d.velocity = new Vector2(moveSpeed, 0);
+        } else {
+            animator.SetBool("isMoving", false);
+            rigidbody2d.velocity = Vector2.zero;
+        }
 
         // Get the current rotation of the cannon
         Quaternion currentRotation = canonTransform.localRotation;
