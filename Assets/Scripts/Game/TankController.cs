@@ -9,6 +9,8 @@ public class TankController : MonoBehaviour
     private Rigidbody2D rigidbody2d;
     private Transform canonTransform; // Assign the cannon child object here in the Inspector
     public float rotationSpeed; // Adjust this to change the speed of rotation
+    public bool isPlayerOne;
+    public bool isPlayerTwo;
 
     // Start is called before the first frame update
     void Start()
@@ -41,7 +43,13 @@ public class TankController : MonoBehaviour
         // Rotate the cannon when the up or down arrow key is pressed
         if (Input.GetKey(KeyCode.UpArrow)) {
             // Rotate the cannon towards -180 degrees
-            Quaternion targetRotation = Quaternion.Euler(0f, 0f, 180f);
+            float angleMax;
+            if (isPlayerOne) {
+                angleMax = -180f;
+            } else {
+                angleMax = 180f;
+            }
+            Quaternion targetRotation = Quaternion.Euler(0f, 0f, angleMax);
             canonTransform.localRotation = Quaternion.RotateTowards(currentRotation, targetRotation, rotationSpeed * Time.deltaTime);
         } else if (Input.GetKey(KeyCode.DownArrow)) {
             // Rotate the cannon towards 0 degrees
