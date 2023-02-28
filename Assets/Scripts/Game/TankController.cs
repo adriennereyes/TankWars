@@ -37,24 +37,24 @@ public class TankController : MonoBehaviour
             rigidbody2d.velocity = Vector2.zero;
         }
 
-        // Get the current rotation of the cannon
-        Quaternion currentRotation = canonTransform.localRotation;
+        // // Get the current rotation of the cannon
+        // Quaternion currentRotation = canonTransform.localRotation;
 
-        // Rotate the cannon when the up or down arrow key is pressed
-        if (Input.GetKey(KeyCode.UpArrow)) {
-            // Rotate the cannon towards -180 degrees
-            float angleMax;
-            if (isPlayerOne) {
-                angleMax = -180f;
-            } else {
-                angleMax = 180f;
-            }
-            Quaternion targetRotation = Quaternion.Euler(0f, 0f, angleMax);
-            canonTransform.localRotation = Quaternion.RotateTowards(currentRotation, targetRotation, rotationSpeed * Time.deltaTime);
-        } else if (Input.GetKey(KeyCode.DownArrow)) {
-            // Rotate the cannon towards 0 degrees
-            Quaternion targetRotation = Quaternion.Euler(0f, 0f, 0f);
-            canonTransform.localRotation = Quaternion.RotateTowards(currentRotation, targetRotation, rotationSpeed * Time.deltaTime);
-        }
+        // // Rotate the cannon when the up or down arrow key is pressed
+        // if (Input.GetKey(KeyCode.UpArrow)) {
+        //     // Rotate the cannon towards -180 degrees
+        //     float angleMax;
+        //     if (isPlayerOne) {
+        //         angleMax = -180f;
+        //     } else {
+        //         angleMax = 180f;
+        //     }
+        //     Quaternion targetRotation = Quaternion.Euler(0f, 0f, angleMax);
+        //     canonTransform.localRotation = Quaternion.RotateTowards(currentRotation, targetRotation, rotationSpeed * Time.deltaTime);
+        // } else if (Input.GetKey(KeyCode.DownArrow)) {
+        //     // Rotate the cannon towards 0 degrees
+        //     Quaternion targetRotation = Quaternion.Euler(0f, 0f, 0f);
+        //     canonTransform.localRotation = Quaternion.RotateTowards(currentRotation, targetRotation, rotationSpeed * Time.deltaTime);
+        // }
     }
 }

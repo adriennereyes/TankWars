@@ -11969,6 +11969,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlayerOneTank
       objectReference: {fileID: 0}
+    - target: {fileID: 3005613725011319221, guid: 7ac90db14959f460d807f50bdc4dd26b, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3681158851438458938, guid: 7ac90db14959f460d807f50bdc4dd26b, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3681158851438458938, guid: 7ac90db14959f460d807f50bdc4dd26b, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7ac90db14959f460d807f50bdc4dd26b, type: 3}
 --- !u!1 &1255838465
