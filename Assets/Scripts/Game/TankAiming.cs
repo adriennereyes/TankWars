@@ -12,6 +12,7 @@ public class TankAiming : MonoBehaviour
 
     public SpriteRenderer arrowSprite;
     public TankController tankController;
+    public TankShooting tankShooting;
     
     // Start is called before the first frame update
     void Start()
@@ -27,7 +28,10 @@ public class TankAiming : MonoBehaviour
             CalculateAngle();
             CalculatePower();
         } else if (Input.GetMouseButtonUp(0)) {
-
+            if (tankController.isPlayerTwo) {
+                currentAngle += 180;
+            }
+            tankShooting.FireMissile(currentPower, currentAngle);
         }
     }
 
@@ -45,18 +49,22 @@ public class TankAiming : MonoBehaviour
         currentAngle = angle;
 
         // Check if the tank is facing left or right
-        int direction = (tankController.isPlayerOne) ? 1 : -1;
-
-        // Adjust the angle if necessary
-        if (currentAngle < 0 && direction == 1) {
-            currentAngle = 0;
-        } else if (currentAngle > 180 && direction == -1) {
-            currentAngle = 180;
+        if (tankController.isPlayerOne) {
+            currentAngle -= 0;
+        } else {
+            currentAngle -= 180;
         }
 
+        // Adjust the angle if necessary
+        // if (currentAngle < 0 && direction == 1) {
+        //     currentAngle = 0;
+        // } else if (currentAngle > 180 && direction == -1) {
+        //     currentAngle = 180;
+        // }
+
         // Set the rotation of the game object and arrow sprite
-        transform.rotation = Quaternion.AngleAxis(currentAngle * direction, Vector3.forward);
-        arrowSprite.transform.rotation = Quaternion.AngleAxis(currentAngle * direction, Vector3.forward);
+        transform.rotation = Quaternion.Euler(0, 0, currentAngle);
+        arrowSprite.transform.rotation = Quaternion.Euler(0, 0, currentAngle);;
     }
 
     public void CalculatePower() {

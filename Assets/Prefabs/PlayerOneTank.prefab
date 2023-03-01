@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 3005613724506645632}
   - component: {fileID: 3005613724506645759}
   - component: {fileID: 4581773515631224425}
+  - component: {fileID: 3989390925473398531}
   m_Layer: 0
   m_Name: tankcanon
   m_TagString: Untagged
@@ -103,6 +104,21 @@ MonoBehaviour:
   currentPower: 0
   currentAngle: 0
   arrowSprite: {fileID: 7523227692346501145}
+  tankController: {fileID: 0}
+  tankShooting: {fileID: 3989390925473398531}
+--- !u!114 &3989390925473398531
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3005613724506645633}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c7984f198a2e4756addce60e5968c53, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  misslePrefab: {fileID: 938344201401673254, guid: 88282f13b7a91441e9ab296c25c4bbf6, type: 3}
 --- !u!1 &3005613725011319221
 GameObject:
   m_ObjectHideFlags: 0

@@ -23063,6 +23063,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlayerTwoTank
       objectReference: {fileID: 0}
+    - target: {fileID: 3813255032831693030, guid: 2ff06646538864a4b847744e9413311b, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3813255032908994236, guid: 2ff06646538864a4b847744e9413311b, type: 3}
       propertyPath: m_SortingOrder
       value: 4
