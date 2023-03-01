@@ -14,14 +14,12 @@ public class TankAiming : MonoBehaviour
     public TankController tankController;
     public TankShooting tankShooting;
     
-    // Start is called before the first frame update
     void Start()
     {
         GameObject parentGameObj = transform.parent.gameObject.transform.parent.gameObject;
         tankController = parentGameObj.GetComponent<TankController>();
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (Input.GetMouseButton(0)) {

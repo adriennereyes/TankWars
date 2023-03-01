@@ -11,31 +11,70 @@ public class TankController : MonoBehaviour
     public float rotationSpeed; // Adjust this to change the speed of rotation
     public bool isPlayerOne;
     public bool isPlayerTwo;
+    public GameManager gameManager;
 
-    // Start is called before the first frame update
     void Start()
     {
         animator = GetComponentInChildren<Animator>();
         rigidbody2d = GetComponentInChildren<Rigidbody2D>();
         canonTransform = transform.Find("tankbody").transform.Find("tankcanon");
         rotationSpeed = 30f;
+
+        //after turns was implemented, checks tank is which player
+        if (gameObject.name == "PlayerOneTank")
+        {
+            isPlayerOne = true;
+        }
+        else if (gameObject.name == "PlayerTwoTank")
+        {
+            isPlayerTwo = true;
+        }
     }
 
-    // Update is called once per frame
     void Update()
     {
-        float horizontalInput = Input.GetAxisRaw("Horizontal");
+        if ((isPlayerOne && gameManager.gameState == GameManager.GameState.Player1Turn)
+            || (isPlayerTwo && gameManager.gameState == GameManager.GameState.Player2Turn))
+        {
 
-        if (horizontalInput < 0) {
-            animator.SetBool("isMoving", true);
-            rigidbody2d.velocity = new Vector2(-moveSpeed, 0);
-        } else if (horizontalInput > 0) {
-            animator.SetBool("isMoving", true);
-            rigidbody2d.velocity = new Vector2(moveSpeed, 0);
-        } else {
+            float horizontalInput = Input.GetAxisRaw("Horizontal");
+
+            if (horizontalInput < 0)
+            {
+                animator.SetBool("isMoving", true);
+                rigidbody2d.velocity = new Vector2(-moveSpeed, 0);
+            }
+            else if (horizontalInput > 0)
+            {
+                animator.SetBool("isMoving", true);
+                rigidbody2d.velocity = new Vector2(moveSpeed, 0);
+            }
+            else
+            {
+                animator.SetBool("isMoving", false);
+                rigidbody2d.velocity = Vector2.zero;
+            }
+        }
+        else
+        {
+            // Tank is inactive, disable movement
             animator.SetBool("isMoving", false);
             rigidbody2d.velocity = Vector2.zero;
         }
+
+        //Before turns was implemented, used this below
+        // float horizontalInput = Input.GetAxisRaw("Horizontal");
+
+        // if (horizontalInput < 0) {
+        //     animator.SetBool("isMoving", true);
+        //     rigidbody2d.velocity = new Vector2(-moveSpeed, 0);
+        // } else if (horizontalInput > 0) {
+        //     animator.SetBool("isMoving", true);
+        //     rigidbody2d.velocity = new Vector2(moveSpeed, 0);
+        // } else {
+        //     animator.SetBool("isMoving", false);
+        //     rigidbody2d.velocity = Vector2.zero;
+        // }
 
         // // Get the current rotation of the cannon
         // Quaternion currentRotation = canonTransform.localRotation;
