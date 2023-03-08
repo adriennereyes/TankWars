@@ -12,6 +12,9 @@ public class TankController : MonoBehaviour
     public bool isPlayerOne;
     public bool isPlayerTwo;
     public GameManager gameManager;
+    public float maxDistance; // maximum allowed distance here
+    public float totalDistance; // total distance traveled
+    public float distanceLeft;
 
     void Start()
     {
@@ -19,6 +22,8 @@ public class TankController : MonoBehaviour
         rigidbody2d = GetComponentInChildren<Rigidbody2D>();
         canonTransform = transform.Find("tankbody").transform.Find("tankcanon");
         rotationSpeed = 30f;
+        maxDistance = 10f;
+        totalDistance = 0f;
 
         //after turns was implemented, checks tank is which player
         if (gameObject.name == "PlayerOneTank")
@@ -43,17 +48,30 @@ public class TankController : MonoBehaviour
             {
                 animator.SetBool("isMoving", true);
                 rigidbody2d.velocity = new Vector2(-moveSpeed, 0);
+                totalDistance += Mathf.Abs(rigidbody2d.velocity.x) * Time.deltaTime; // Calculate distance traveled
             }
             else if (horizontalInput > 0)
             {
                 animator.SetBool("isMoving", true);
                 rigidbody2d.velocity = new Vector2(moveSpeed, 0);
+                totalDistance += Mathf.Abs(rigidbody2d.velocity.x) * Time.deltaTime; // Calculate distance traveled
             }
             else
             {
                 animator.SetBool("isMoving", false);
                 rigidbody2d.velocity = Vector2.zero;
             }
+
+            // Check if total distance traveled exceeds maximum allowed distance
+            if (totalDistance > maxDistance)
+            {
+                // Stop the tank from moving further
+                animator.SetBool("isMoving", false);
+                rigidbody2d.velocity = Vector2.zero;
+                totalDistance = maxDistance; // Set total distance to the maximum allowed distance
+            }
+
+            distanceLeft = maxDistance - totalDistance;
         }
         else
         {

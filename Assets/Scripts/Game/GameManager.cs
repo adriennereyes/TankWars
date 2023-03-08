@@ -90,6 +90,7 @@ public class GameManager : MonoBehaviour
         {
             gameState = GameState.Player2Turn;
             tankController1.enabled = false;
+            tankController1.totalDistance = 0f;
             tankShooting1.enabled = false;
             tankAiming1.enabled = false;
             tankController2.enabled = true;

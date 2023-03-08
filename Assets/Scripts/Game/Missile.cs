@@ -6,7 +6,7 @@ public class Missile : MonoBehaviour
 {
     Rigidbody2D rb;
 
-    public float aliveLength = 3f;
+    public float aliveLength = 8f;
     public float radius = 2f;
     public GameObject explosionPrefab;
     public AudioClip explosionClip;
