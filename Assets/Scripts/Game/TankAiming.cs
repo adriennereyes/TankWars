@@ -30,6 +30,10 @@ public class TankAiming : MonoBehaviour
                 currentAngle += 180;
             }
             tankShooting.FireMissile(currentPower, currentAngle);
+            tankController.shotMissile = true;
+            gameObject.GetComponent<TankAiming>().enabled = false;
+            tankShooting.enabled = false;
+            tankController.enabled = false;
         }
     }
 

@@ -49,11 +49,13 @@ public class GameManager : MonoBehaviour
         healthbar.UpdateHealthbar(3, playerOneHealth);
         healthbar2.UpdateHealthbar(3, playerTwoHealth);
 
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            EndTurn();
+        if (tankController1.shotMissile || tankController2.shotMissile) {
+            GameObject[] missiles = GameObject.FindGameObjectsWithTag("Missile");
+            GameObject[] explosions = GameObject.FindGameObjectsWithTag("Explosion");
+            if ((missiles.Length == 0) && (explosions.Length == 0) ) {
+                EndTurn();
+            }
         }
-
         timeSinceWind += Time.deltaTime;
         if (timeSinceWind >= timeBetweenWinds)
         {
@@ -93,10 +95,8 @@ public class GameManager : MonoBehaviour
         if (gameState == GameState.Player1Turn)
         {
             gameState = GameState.Player2Turn;
-            tankController1.enabled = false;
             tankController1.totalDistance = 0f;
-            tankShooting1.enabled = false;
-            tankAiming1.enabled = false;
+            tankController1.shotMissile = false;
             tankController2.enabled = true;
             tankShooting2.enabled = true;
             tankAiming2.enabled = true;
@@ -105,9 +105,8 @@ public class GameManager : MonoBehaviour
         else if (gameState == GameState.Player2Turn)
         {
             gameState = GameState.Player1Turn;
-            tankController2.enabled = false;
-            tankShooting2.enabled = false;
-            tankAiming2.enabled = false;
+            tankController2.totalDistance = 0f;
+            tankController2.shotMissile = false;
             tankController1.enabled = true;
             tankShooting1.enabled = true;
             tankAiming1.enabled = true;

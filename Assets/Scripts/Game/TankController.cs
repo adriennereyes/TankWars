@@ -15,6 +15,7 @@ public class TankController : MonoBehaviour
     public float maxDistance; // maximum allowed distance here
     public float totalDistance; // total distance traveled
     public float distanceLeft;
+    public bool shotMissile;
 
     void Start()
     {
@@ -24,6 +25,7 @@ public class TankController : MonoBehaviour
         rotationSpeed = 30f;
         maxDistance = 10f;
         totalDistance = 0f;
+        shotMissile = false;
 
         //after turns was implemented, checks tank is which player
         if (gameObject.name == "PlayerOneTank")

@@ -12,18 +12,11 @@ public class Missile : MonoBehaviour
     public AudioClip explosionClip;
     private AudioSource explosionAudioSource;
 
-    // Start is called before the first frame update
     void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
         Invoke("Explode", aliveLength);
         Invoke("EnableCollider", .2f);
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
     }
 
     public void Initialize(int power)
