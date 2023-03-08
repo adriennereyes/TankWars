@@ -18,12 +18,16 @@ public class GameManager : MonoBehaviour
     public TankShooting tankShooting2;
     public TankAiming tankAiming1;
     public TankAiming tankAiming2;
+    public int playerOneHealth;
+    public int playerTwoHealth;
 
     void Start()
     {
         gameState = GameState.Player1Turn;
         EnableTankControls(tankController1, tankAiming1, tankShooting1);
         DisableTankControls(tankController2, tankAiming2, tankShooting2);
+        playerOneHealth = 3;
+        playerTwoHealth = 3;
     }
 
     void Update()
