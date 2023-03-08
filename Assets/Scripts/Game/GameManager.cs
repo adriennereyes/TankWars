@@ -25,6 +25,7 @@ public class GameManager : MonoBehaviour
     public Wind wind1;
     public Wind wind2;
     public Wind noWind;
+    public Wiggle wiggleScript;
     public float timeBetweenWinds = 30f;
     private float timeSinceWind = 0f;
     private int windCount = 0;
@@ -65,18 +66,21 @@ public class GameManager : MonoBehaviour
         windCount++;
         if (windCount % 3 == 0)
         {
+            wiggleScript.stopWiggle();
             wind1.gameObject.SetActive(false);
             wind2.gameObject.SetActive(false);
             noWind.gameObject.SetActive(true);
         }
         else if (windCount % 2 == 0)
         {
+            wiggleScript.startWiggle();
             wind1.gameObject.SetActive(false);
             wind2.gameObject.SetActive(true);
             noWind.gameObject.SetActive(false);
         }
         else
         {
+            wiggleScript.startWiggle();
             wind1.gameObject.SetActive(true);
             wind2.gameObject.SetActive(false);
             noWind.gameObject.SetActive(false);
