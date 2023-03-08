@@ -30,6 +30,8 @@ public class GameManager : MonoBehaviour
         DisableTankControls(tankController2, tankAiming2, tankShooting2);
         playerOneHealth = 3;
         playerTwoHealth = 3;
+        healthbar = gameObject.GetComponent<HealthBar>();
+        healthbar2 = gameObject.GetComponent<HealthBar2>();
     }
 
     void Update()
