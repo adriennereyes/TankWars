@@ -20,6 +20,12 @@ public class GameManager : MonoBehaviour
     public TankAiming tankAiming2;
     public int playerOneHealth;
     public int playerTwoHealth;
+    public Wind wind1;
+    public Wind wind2;
+    public Wind noWind;
+    public float timeBetweenWinds = 30f;
+    private float timeSinceWind = 0f;
+    private int windCount = 0;
 
     void Start()
     {
@@ -28,6 +34,9 @@ public class GameManager : MonoBehaviour
         DisableTankControls(tankController2, tankAiming2, tankShooting2);
         playerOneHealth = 3;
         playerTwoHealth = 3;
+        wind1.gameObject.SetActive(false);
+        wind2.gameObject.SetActive(false);
+        noWind.gameObject.SetActive(true);
     }
 
     void Update()
@@ -36,6 +45,36 @@ public class GameManager : MonoBehaviour
         {
             EndTurn();
         }
+
+        timeSinceWind += Time.deltaTime;
+        if (timeSinceWind >= timeBetweenWinds)
+        {
+            ActivateWind();
+        }
+    }
+
+    void ActivateWind()
+    {
+        windCount++;
+        if (windCount % 3 == 0)
+        {
+            wind1.gameObject.SetActive(false);
+            wind2.gameObject.SetActive(false);
+            noWind.gameObject.SetActive(true);
+        }
+        else if (windCount % 2 == 0)
+        {
+            wind1.gameObject.SetActive(false);
+            wind2.gameObject.SetActive(true);
+            noWind.gameObject.SetActive(false);
+        }
+        else
+        {
+            wind1.gameObject.SetActive(true);
+            wind2.gameObject.SetActive(false);
+            noWind.gameObject.SetActive(false);
+        }
+        timeSinceWind = 0f;
     }
 
     public void EndTurn()
@@ -49,6 +88,7 @@ public class GameManager : MonoBehaviour
             tankController2.enabled = true;
             tankShooting2.enabled = true;
             tankAiming2.enabled = true;
+            ActivateWind();
         }
         else if (gameState == GameState.Player2Turn)
         {
@@ -59,6 +99,7 @@ public class GameManager : MonoBehaviour
             tankController1.enabled = true;
             tankShooting1.enabled = true;
             tankAiming1.enabled = true;
+            ActivateWind();
         }
     }
 
