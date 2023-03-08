@@ -9,6 +9,8 @@ public class Missile : MonoBehaviour
     public float aliveLength = 3f;
     public float radius = 2f;
     public GameObject explosionPrefab;
+    public AudioClip explosionClip;
+    private AudioSource explosionAudioSource;
 
     // Start is called before the first frame update
     void Awake()
@@ -34,9 +36,28 @@ public class Missile : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision) {
         Explode();
+        if (collision.gameObject.name == "tankbody") {
+            TankController tankController = collision.gameObject.transform.parent.gameObject.GetComponent<TankController>();
+            if (tankController.isPlayerOne) {
+                tankController.gameManager.playerOneHealth -= 1;
+            } else {
+                tankController.gameManager.playerTwoHealth -= 1;
+            }
+        }
     }
 
     public void Explode() {
         Destroy(gameObject);
+        SpawnExplosionFX();
+    }
+
+    public void SpawnExplosionFX() {
+        GameObject explosion = Instantiate(explosionPrefab, transform.position, Quaternion.identity);
+        explosionAudioSource = explosion.AddComponent<AudioSource>();
+        explosionAudioSource.volume = 0.6f;
+        explosionAudioSource.PlayOneShot(explosionClip);
+        explosion.transform.localScale *= radius;
+        explosion.GetComponent<Animator>().SetBool("isExplosion", true);
+        Destroy(explosion, .5f);
     }
 }

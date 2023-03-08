@@ -3465,6 +3465,28 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &236204263 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8013539321988087867, guid: 2ff06646538864a4b847744e9413311b, type: 3}
+  m_PrefabInstance: {fileID: 3813255032462818267}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5aa22fe2812ef43889eb8e2eaa031493, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &236204266 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5646138673420509819, guid: 2ff06646538864a4b847744e9413311b, type: 3}
+  m_PrefabInstance: {fileID: 3813255032462818267}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c7984f198a2e4756addce60e5968c53, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &239742923
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5459,6 +5481,28 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &404404784 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4581773515631224425, guid: 7ac90db14959f460d807f50bdc4dd26b, type: 3}
+  m_PrefabInstance: {fileID: 1252834713}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5aa22fe2812ef43889eb8e2eaa031493, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &404404787 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3989390925473398531, guid: 7ac90db14959f460d807f50bdc4dd26b, type: 3}
+  m_PrefabInstance: {fileID: 1252834713}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c7984f198a2e4756addce60e5968c53, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &414277972
 GameObject:
   m_ObjectHideFlags: 0
@@ -9082,6 +9126,17 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &781823941 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3813255032831692955, guid: 2ff06646538864a4b847744e9413311b, type: 3}
+  m_PrefabInstance: {fileID: 3813255032462818267}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e019779062774594ba3eb5498bd215b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &790226131
 GameObject:
   m_ObjectHideFlags: 0
@@ -13345,6 +13400,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3005613725011319220, guid: 7ac90db14959f460d807f50bdc4dd26b, type: 3}
+      propertyPath: gameManager
+      value: 
+      objectReference: {fileID: 1902000086}
     - target: {fileID: 3005613725011319221, guid: 7ac90db14959f460d807f50bdc4dd26b, type: 3}
       propertyPath: m_Name
       value: PlayerOneTank
@@ -17991,6 +18050,17 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1623869883 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3005613725011319220, guid: 7ac90db14959f460d807f50bdc4dd26b, type: 3}
+  m_PrefabInstance: {fileID: 1252834713}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e019779062774594ba3eb5498bd215b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1642796619
 GameObject:
   m_ObjectHideFlags: 0
@@ -20532,6 +20602,59 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4756773034887050, guid: 45570b5f63ba4b64590574d72f44d18b, type: 3}
   m_PrefabInstance: {fileID: 1889664082}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1902000084
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1902000085}
+  - component: {fileID: 1902000086}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1902000085
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1902000084}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -6.237178, y: 4.188435, z: -10.071957}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 10
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1902000086
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1902000084}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6cc662b6caf764404b428808d60d1d98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameState: 0
+  tankController1: {fileID: 1623869883}
+  tankController2: {fileID: 781823941}
+  tankShooting1: {fileID: 404404787}
+  tankShooting2: {fileID: 236204266}
+  tankAiming1: {fileID: 404404784}
+  tankAiming2: {fileID: 236204263}
+  playerOneHealth: 0
+  playerTwoHealth: 0
 --- !u!1 &1906561523
 GameObject:
   m_ObjectHideFlags: 0
@@ -23015,6 +23138,10 @@ PrefabInstance:
       propertyPath: m_SortingOrder
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 3813255032831692955, guid: 2ff06646538864a4b847744e9413311b, type: 3}
+      propertyPath: gameManager
+      value: 
+      objectReference: {fileID: 1902000086}
     - target: {fileID: 3813255032831693028, guid: 2ff06646538864a4b847744e9413311b, type: 3}
       propertyPath: m_RootOrder
       value: 2
