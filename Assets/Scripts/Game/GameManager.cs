@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
+    private HealthBar healthbar;
+    private HealthBar2 healthbar2;
     public enum GameState
     {
         Player1Turn,
@@ -32,6 +34,9 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
+        healthbar.UpdateHealthbar(3, playerOneHealth);
+        healthbar2.UpdateHealthbar(3, playerTwoHealth);
+
         if (Input.GetKeyDown(KeyCode.Space))
         {
             EndTurn();
