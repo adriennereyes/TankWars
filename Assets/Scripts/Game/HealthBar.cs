@@ -7,7 +7,8 @@ public class HealthBar : MonoBehaviour
 {
     [SerializeField] private Image healthbarSprite;
 
-    public void UpdateHealthbar(float maxHealth, float currentHealth) {
+    public void UpdateHealthbar(float maxHealth, float currentHealth)
+    {
         healthbarSprite.fillAmount = currentHealth / maxHealth;
     }
 }
