@@ -16,6 +16,8 @@ public class TankController : MonoBehaviour
     public float totalDistance; // total distance traveled
     public float distanceLeft;
     public bool shotMissile;
+    private GasBar gasbar;
+    private GasBar2 gasbar2;
 
     void Start()
     {
@@ -26,6 +28,8 @@ public class TankController : MonoBehaviour
         maxDistance = 10f;
         totalDistance = 0f;
         shotMissile = false;
+        gasbar = gameObject.GetComponent<GasBar>();
+        gasbar2 = gameObject.GetComponent<GasBar2>();
 
         //after turns was implemented, checks tank is which player
         if (gameObject.name == "PlayerOneTank")
@@ -74,12 +78,25 @@ public class TankController : MonoBehaviour
             }
 
             distanceLeft = maxDistance - totalDistance;
+        
+
         }
         else
         {
             // Tank is inactive, disable movement
             animator.SetBool("isMoving", false);
             rigidbody2d.velocity = Vector2.zero;
+        }
+
+        if (gameObject.name == "PlayerOneTank")
+        {
+            isPlayerOne = true;
+            gasbar.UpdateGasbar(distanceLeft, maxDistance);
+        }
+        else if (gameObject.name == "PlayerTwoTank")
+        {
+            isPlayerTwo = true;
+            gasbar2.UpdateGasbar(distanceLeft, maxDistance);
         }
 
         //Before turns was implemented, used this below
