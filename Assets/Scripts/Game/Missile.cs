@@ -11,12 +11,14 @@ public class Missile : MonoBehaviour
     public GameObject explosionPrefab;
     public AudioClip explosionClip;
     private AudioSource explosionAudioSource;
+    private GameOver gameOver;
 
     void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
         Invoke("Explode", aliveLength);
         Invoke("EnableCollider", .2f);
+        gameOver = FindObjectOfType<GameOver>();
     }
 
     public void Initialize(int power)
@@ -44,6 +46,10 @@ public class Missile : MonoBehaviour
                 else
                 {
                     tankController.gameManager.playerTwoHealth -= 1;
+                }
+                if (tankController.gameManager.playerOneHealth == 0 || tankController.gameManager.playerTwoHealth == 0)
+                {
+                    gameOver.EndGame();
                 }
             }
         }
