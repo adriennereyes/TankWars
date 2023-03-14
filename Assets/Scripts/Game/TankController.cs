@@ -78,6 +78,18 @@ public class TankController : MonoBehaviour
             }
 
             distanceLeft = maxDistance - totalDistance;
+            
+            if (gameObject.name == "PlayerOneTank")
+            {
+                
+                Debug.Log("decreasing p1 gas");
+                gasbar.UpdateGasbar(maxDistance, distanceLeft);
+            }
+            else if (gameObject.name == "PlayerTwoTank")
+            {
+                isPlayerTwo = true;
+                gasbar2.UpdateGasbar(maxDistance, distanceLeft);
+            }
         
 
         }
@@ -88,16 +100,7 @@ public class TankController : MonoBehaviour
             rigidbody2d.velocity = Vector2.zero;
         }
 
-        if (gameObject.name == "PlayerOneTank")
-        {
-            isPlayerOne = true;
-            gasbar.UpdateGasbar(distanceLeft, maxDistance);
-        }
-        else if (gameObject.name == "PlayerTwoTank")
-        {
-            isPlayerTwo = true;
-            gasbar2.UpdateGasbar(distanceLeft, maxDistance);
-        }
+
 
         //Before turns was implemented, used this below
         // float horizontalInput = Input.GetAxisRaw("Horizontal");

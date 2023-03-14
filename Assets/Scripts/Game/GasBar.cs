@@ -5,10 +5,11 @@ using UnityEngine.UI;
 
 public class GasBar : MonoBehaviour
 {
-    [SerializeField] private Image _gasbarSprite;
+    [SerializeField] private Image gasbarSprite;
 
     public void UpdateGasbar(float maxGas, float currentGas)
     {
-        _gasbarSprite.fillAmount = currentGas / maxGas;
+        Debug.Log("decreasing p1 gas");
+        gasbarSprite.fillAmount = currentGas / maxGas;
     }
 }
