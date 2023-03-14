@@ -9,7 +9,6 @@ public class GasBar2 : MonoBehaviour
 
     public void UpdateGasbar(float maxGas, float currentGas)
     {
-        Debug.Log("decreasing p2 gas");
         gasbarSprite.fillAmount = currentGas / maxGas;
     }
 }

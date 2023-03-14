@@ -1328,6 +1328,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 72082645}
   m_CullTransparentMesh: 1
+--- !u!1 &79572041 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3813255032831693030, guid: 2ff06646538864a4b847744e9413311b, type: 3}
+  m_PrefabInstance: {fileID: 1582473875}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &102865854
 GameObject:
   m_ObjectHideFlags: 0
@@ -4008,7 +4013,6 @@ GameObject:
   - component: {fileID: 303310771}
   - component: {fileID: 303310770}
   - component: {fileID: 303310769}
-  - component: {fileID: 303310768}
   m_Layer: 0
   m_Name: Gas Player2
   m_TagString: Untagged
@@ -4038,19 +4042,6 @@ RectTransform:
   m_AnchoredPosition: {x: 9.223745, y: 1.4382095}
   m_SizeDelta: {x: 800, y: 425}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &303310768
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 303310766}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 361e534f88b07464aafc4e2c0c27c8b4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _gasbarSprite: {fileID: 72082647}
 --- !u!114 &303310769
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13475,6 +13466,11 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &974305135 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3005613725011319221, guid: 7ac90db14959f460d807f50bdc4dd26b, type: 3}
+  m_PrefabInstance: {fileID: 472282707}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &977952613
 GameObject:
   m_ObjectHideFlags: 0
@@ -20730,12 +20726,25 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3813255032831692955, guid: 2ff06646538864a4b847744e9413311b, type: 3}
   m_PrefabInstance: {fileID: 1582473875}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 79572041}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7e019779062774594ba3eb5498bd215b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1447609939
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 79572041}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 361e534f88b07464aafc4e2c0c27c8b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gasbarSprite: {fileID: 72082647}
 --- !u!1001 &1448598269
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -21933,7 +21942,6 @@ GameObject:
   - component: {fileID: 1579054682}
   - component: {fileID: 1579054681}
   - component: {fileID: 1579054680}
-  - component: {fileID: 1579054679}
   m_Layer: 0
   m_Name: Gas Player1
   m_TagString: Untagged
@@ -21963,19 +21971,6 @@ RectTransform:
   m_AnchoredPosition: {x: -6.2762547, y: 1.4382095}
   m_SizeDelta: {x: 800, y: 425}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1579054679
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1579054677}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c6eefcb73a5c7094c946988c3c62b081, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _gasbarSprite: {fileID: 1280548722}
 --- !u!114 &1579054680
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -24042,12 +24037,25 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3005613725011319220, guid: 7ac90db14959f460d807f50bdc4dd26b, type: 3}
   m_PrefabInstance: {fileID: 472282707}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 974305135}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7e019779062774594ba3eb5498bd215b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1757501517
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 974305135}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c6eefcb73a5c7094c946988c3c62b081, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gasbarSprite: {fileID: 1280548722}
 --- !u!1 &1760605658
 GameObject:
   m_ObjectHideFlags: 0
