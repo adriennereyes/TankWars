@@ -12093,6 +12093,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6cc662b6caf764404b428808d60d1d98, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  p1fire: {fileID: 0}
+  p2fire: {fileID: 0}
   gameState: 0
   playerOneTank: {fileID: 974305135}
   playerTwoTank: {fileID: 79572041}
@@ -22410,6 +22412,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6cc662b6caf764404b428808d60d1d98, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  p1fire: {fileID: 0}
+  p2fire: {fileID: 0}
   gameState: 0
   playerOneTank: {fileID: 0}
   playerTwoTank: {fileID: 0}

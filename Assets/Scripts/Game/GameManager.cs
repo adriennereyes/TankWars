@@ -105,8 +105,8 @@ public class GameManager : MonoBehaviour
         if (gameState == GameState.Player1Turn)
         {
             //insert turn trasnition
-            p2fire.SetActive(true);
-            Invoke("P2EndTurn(p2fire)", 3);
+            //p2fire.SetActive(true);
+            //Invoke("P2EndTurn(p2fire)", 3);
 
             gameState = GameState.Player2Turn;
             tankController1.totalDistance = 0f;
@@ -121,8 +121,8 @@ public class GameManager : MonoBehaviour
         else if (gameState == GameState.Player2Turn)
         {
             //insert turn transition
-            p1fire.SetActive(true);
-            Invoke("P1EndTurn(p1fire)", 3);
+            //p1fire.SetActive(true);
+            //Invoke("P1EndTurn(p1fire)", 3);
 
             gameState = GameState.Player1Turn;
             tankController2.totalDistance = 0f;
