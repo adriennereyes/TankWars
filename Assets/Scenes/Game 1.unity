@@ -5965,6 +5965,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3005613724506645759, guid: 7ac90db14959f460d807f50bdc4dd26b, type: 3}
+      propertyPath: m_SortingOrder
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 3005613725011319219, guid: 7ac90db14959f460d807f50bdc4dd26b, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -6016,6 +6020,14 @@ PrefabInstance:
     - target: {fileID: 3005613725011319221, guid: 7ac90db14959f460d807f50bdc4dd26b, type: 3}
       propertyPath: m_Name
       value: PlayerOneTank
+      objectReference: {fileID: 0}
+    - target: {fileID: 3005613725946672181, guid: 7ac90db14959f460d807f50bdc4dd26b, type: 3}
+      propertyPath: m_SortingOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7523227692346501145, guid: 7ac90db14959f460d807f50bdc4dd26b, type: 3}
+      propertyPath: m_SortingOrder
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7ac90db14959f460d807f50bdc4dd26b, type: 3}
@@ -6412,7 +6424,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 800, y: 600}
@@ -12658,6 +12670,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerMessageText: {fileID: 488493704}
+  p1fire: {fileID: 0}
+  p2fire: {fileID: 0}
   gameState: 0
   playerOneTank: {fileID: 87464680}
   playerTwoTank: {fileID: 48434750}
@@ -22889,7 +22903,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3813255032831693028, guid: 2ff06646538864a4b847744e9413311b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 5
+      value: -3
       objectReference: {fileID: 0}
     - target: {fileID: 3813255032831693028, guid: 2ff06646538864a4b847744e9413311b, type: 3}
       propertyPath: m_LocalPosition.y
@@ -23071,6 +23085,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerMessageText: {fileID: 0}
+  p1fire: {fileID: 0}
+  p2fire: {fileID: 0}
   gameState: 0
   playerOneTank: {fileID: 0}
   playerTwoTank: {fileID: 0}

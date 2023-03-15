@@ -146,7 +146,7 @@ public class GameManager : MonoBehaviour
     {
         playerMessageText.text = message;
         playerMessageText.gameObject.SetActive(true);
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(0.9f);
         playerMessageText.gameObject.SetActive(false);
     }
     void EnableTankControls(TankController controller, TankAiming aiming, TankShooting shooting)
@@ -163,11 +163,13 @@ public class GameManager : MonoBehaviour
         shooting.enabled = false;
     }
 
-    void P1EndTurn (GameObject gameObject) {
+    void P1EndTurn(GameObject gameObject)
+    {
         gameObject.SetActive(false);
     }
-    
-    void P2EndTurn (GameObject gameObject) {
+
+    void P2EndTurn(GameObject gameObject)
+    {
         gameObject.SetActive(false);
     }
 }
