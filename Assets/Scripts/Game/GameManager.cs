@@ -14,6 +14,8 @@ public class GameManager : MonoBehaviour
     }
 
     public GameState gameState;
+    public GameObject playerOneTank;
+    public GameObject playerTwoTank;
     public TankController tankController1;
     public TankController tankController2;
     public TankShooting tankShooting1;
@@ -92,11 +94,15 @@ public class GameManager : MonoBehaviour
 
     public void EndTurn()
     {
+        GameObject tankArrow1 = playerOneTank.transform.GetChild(0).gameObject.transform.GetChild(0).gameObject.transform.GetChild(0).gameObject;
+        GameObject tankArrow2 = playerTwoTank.transform.GetChild(0).gameObject.transform.GetChild(0).gameObject.transform.GetChild(0).gameObject;
         if (gameState == GameState.Player1Turn)
         {
             gameState = GameState.Player2Turn;
             tankController1.totalDistance = 0f;
             tankController1.shotMissile = false;
+            tankArrow1.SetActive(false);
+            tankArrow2.SetActive(true);
             tankController2.enabled = true;
             tankShooting2.enabled = true;
             tankAiming2.enabled = true;
@@ -107,6 +113,8 @@ public class GameManager : MonoBehaviour
             gameState = GameState.Player1Turn;
             tankController2.totalDistance = 0f;
             tankController2.shotMissile = false;
+            tankArrow2.SetActive(false);
+            tankArrow1.SetActive(true);
             tankController1.enabled = true;
             tankShooting1.enabled = true;
             tankAiming1.enabled = true;

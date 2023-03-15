@@ -916,6 +916,11 @@ PrefabInstance:
       objectReference: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ddb716f4f4916bd49acf599e99be7b37, type: 3}
+--- !u!1 &48434750 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3813255032831693030, guid: 2ff06646538864a4b847744e9413311b, type: 3}
+  m_PrefabInstance: {fileID: 1582473875}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &51301633
 GameObject:
   m_ObjectHideFlags: 0
@@ -1328,6 +1333,11 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &87464680 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3005613725011319221, guid: 7ac90db14959f460d807f50bdc4dd26b, type: 3}
+  m_PrefabInstance: {fileID: 472282707}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &102865854
 GameObject:
   m_ObjectHideFlags: 0
@@ -12134,6 +12144,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameState: 0
+  playerOneTank: {fileID: 87464680}
+  playerTwoTank: {fileID: 48434750}
   tankController1: {fileID: 1757501515}
   tankController2: {fileID: 1447609937}
   tankShooting1: {fileID: 668589447}
@@ -20514,7 +20526,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3813255032831692955, guid: 2ff06646538864a4b847744e9413311b, type: 3}
   m_PrefabInstance: {fileID: 1582473875}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 48434750}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7e019779062774594ba3eb5498bd215b, type: 3}
@@ -22072,6 +22084,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameState: 0
+  playerOneTank: {fileID: 0}
+  playerTwoTank: {fileID: 0}
   tankController1: {fileID: 0}
   tankController2: {fileID: 0}
   tankShooting1: {fileID: 0}
@@ -23862,7 +23876,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3005613725011319220, guid: 7ac90db14959f460d807f50bdc4dd26b, type: 3}
   m_PrefabInstance: {fileID: 472282707}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 87464680}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7e019779062774594ba3eb5498bd215b, type: 3}
