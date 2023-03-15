@@ -1,9 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class GameManager : MonoBehaviour
 {
+    public TextMeshProUGUI playerMessageText;
     private HealthBar healthbar;
     private HealthBar2 healthbar2;
     public enum GameState
@@ -32,6 +34,7 @@ public class GameManager : MonoBehaviour
     private float timeSinceWind = 0f;
     private int windCount = 0;
 
+
     void Start()
     {
         gameState = GameState.Player1Turn;
@@ -51,10 +54,12 @@ public class GameManager : MonoBehaviour
         healthbar.UpdateHealthbar(3, playerOneHealth);
         healthbar2.UpdateHealthbar(3, playerTwoHealth);
 
-        if (tankController1.shotMissile || tankController2.shotMissile) {
+        if (tankController1.shotMissile || tankController2.shotMissile)
+        {
             GameObject[] missiles = GameObject.FindGameObjectsWithTag("Missile");
             GameObject[] explosions = GameObject.FindGameObjectsWithTag("Explosion");
-            if ((missiles.Length == 0) && (explosions.Length == 0) ) {
+            if ((missiles.Length == 0) && (explosions.Length == 0))
+            {
                 EndTurn();
             }
         }
@@ -107,6 +112,7 @@ public class GameManager : MonoBehaviour
             tankShooting2.enabled = true;
             tankAiming2.enabled = true;
             ActivateWind();
+            StartCoroutine(ShowPlayerMessage("Player 2 Fire"));
         }
         else if (gameState == GameState.Player2Turn)
         {
@@ -119,9 +125,16 @@ public class GameManager : MonoBehaviour
             tankShooting1.enabled = true;
             tankAiming1.enabled = true;
             ActivateWind();
+            StartCoroutine(ShowPlayerMessage("Player 1 Fire"));
         }
     }
-
+    IEnumerator ShowPlayerMessage(string message)
+    {
+        playerMessageText.text = message;
+        playerMessageText.gameObject.SetActive(true);
+        yield return new WaitForSeconds(0.5f);
+        playerMessageText.gameObject.SetActive(false);
+    }
     void EnableTankControls(TankController controller, TankAiming aiming, TankShooting shooting)
     {
         controller.enabled = true;

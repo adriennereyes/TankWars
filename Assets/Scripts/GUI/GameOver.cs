@@ -17,7 +17,13 @@ public class GameOver : MonoBehaviour
 
     public void EndGame()
     {
+        Invoke("Stop", 0.5f);
         gameOverPanel.SetActive(true);
+    }
+
+    void Stop()
+    {
+        Time.timeScale = 0;
     }
 
     public void MainMenu()
