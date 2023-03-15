@@ -6,6 +6,8 @@ public class GameManager : MonoBehaviour
 {
     private HealthBar healthbar;
     private HealthBar2 healthbar2;
+    public GameObject p1fire;
+    public GameObject p2fire;
     public enum GameState
     {
         Player1Turn,
@@ -44,6 +46,8 @@ public class GameManager : MonoBehaviour
         noWind.gameObject.SetActive(true);
         healthbar = gameObject.GetComponent<HealthBar>();
         healthbar2 = gameObject.GetComponent<HealthBar2>();
+        p1fire = GameObject.Find("P1Fire");
+        p2fire = GameObject.Find("P2Fire");
     }
 
     void Update()
@@ -94,10 +98,16 @@ public class GameManager : MonoBehaviour
 
     public void EndTurn()
     {
+
+
         GameObject tankArrow1 = playerOneTank.transform.GetChild(0).gameObject.transform.GetChild(0).gameObject.transform.GetChild(0).gameObject;
         GameObject tankArrow2 = playerTwoTank.transform.GetChild(0).gameObject.transform.GetChild(0).gameObject.transform.GetChild(0).gameObject;
         if (gameState == GameState.Player1Turn)
         {
+            //insert turn trasnition
+            p2fire.SetActive(true);
+            Invoke("P2EndTurn(p2fire)", 3);
+
             gameState = GameState.Player2Turn;
             tankController1.totalDistance = 0f;
             tankController1.shotMissile = false;
@@ -110,6 +120,10 @@ public class GameManager : MonoBehaviour
         }
         else if (gameState == GameState.Player2Turn)
         {
+            //insert turn transition
+            p1fire.SetActive(true);
+            Invoke("P1EndTurn(p1fire)", 3);
+
             gameState = GameState.Player1Turn;
             tankController2.totalDistance = 0f;
             tankController2.shotMissile = false;
@@ -134,5 +148,13 @@ public class GameManager : MonoBehaviour
         controller.enabled = false;
         aiming.enabled = false;
         shooting.enabled = false;
+    }
+
+    void P1EndTurn (GameObject gameObject) {
+        gameObject.SetActive(false);
+    }
+    
+    void P2EndTurn (GameObject gameObject) {
+        gameObject.SetActive(false);
     }
 }
