@@ -13,8 +13,7 @@ public class GameManager : MonoBehaviour
     public enum GameState
     {
         Player1Turn,
-        Player2Turn,
-        GameOver
+        Player2Turn
     }
 
     public GameState gameState;
@@ -35,6 +34,10 @@ public class GameManager : MonoBehaviour
     public float timeBetweenWinds = 30f;
     private float timeSinceWind = 0f;
     private int windCount = 0;
+    // public int playerOneWins = 0;
+    // public int playerTwoWins = 0;
+    public int gamesToWin = 2;
+
 
 
     void Start()
@@ -172,4 +175,5 @@ public class GameManager : MonoBehaviour
     {
         gameObject.SetActive(false);
     }
+
 }

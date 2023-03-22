@@ -12,6 +12,9 @@ public class Missile : MonoBehaviour
     public AudioClip explosionClip;
     private AudioSource explosionAudioSource;
     private GameOver gameOver;
+    public bool playerOneWonRound;
+    public bool playerTwoWonRound;
+
 
     void Awake()
     {
@@ -49,7 +52,22 @@ public class Missile : MonoBehaviour
                 }
                 if (tankController.gameManager.playerOneHealth == 0 || tankController.gameManager.playerTwoHealth == 0)
                 {
-                    gameOver.EndGame();
+                    if (tankController.gameManager.playerOneHealth == 0)
+                    {
+                        GameData.playerTwoWins++;
+                        GameData.playerTwoTotalWins++;
+                        playerTwoWonRound = true;
+                        playerOneWonRound = false;
+                    }
+                    else
+                    {
+                        GameData.playerOneWins++;
+                        GameData.playerOneTotalWins++;
+                        playerTwoWonRound = false;
+                        playerOneWonRound = true;
+                    }
+
+                    gameOver.EndGame(playerTwoWonRound, playerOneWonRound, GameData.playerOneWins, GameData.playerTwoWins, tankController.gameManager.gamesToWin, tankController.gameManager);
                 }
             }
         }
