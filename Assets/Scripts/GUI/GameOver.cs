@@ -18,10 +18,6 @@ public class GameOver : MonoBehaviour
 
     private void Start()
     {
-        // mainMenuButton.onClick.AddListener(MainMenu);
-        // quitButton.onClick.AddListener(Quit);
-        // playAgainButton.onClick.AddListener(PlayAgain);
-        // restartButton.onClick.AddListener(Restart);
         gameOverPanel.SetActive(false);
     }
 
@@ -64,11 +60,9 @@ public class GameOver : MonoBehaviour
 
     public void resetScore()
     {
-        // Time.timeScale = 1;
         GameData.ResetWins();
         playerOneScoreText.text = $"Player 1 Score: {GameData.playerOneWins}";
         playerTwoScoreText.text = $"Player 2 Score: {GameData.playerTwoWins}";
-        // SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
     public void PlayAgain()

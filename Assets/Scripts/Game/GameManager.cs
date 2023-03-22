@@ -34,8 +34,6 @@ public class GameManager : MonoBehaviour
     public float timeBetweenWinds = 30f;
     private float timeSinceWind = 0f;
     private int windCount = 0;
-    // public int playerOneWins = 0;
-    // public int playerTwoWins = 0;
     public int gamesToWin = 2;
 
 
@@ -112,10 +110,6 @@ public class GameManager : MonoBehaviour
         GameObject tankArrow2 = playerTwoTank.transform.GetChild(0).gameObject.transform.GetChild(0).gameObject.transform.GetChild(0).gameObject;
         if (gameState == GameState.Player1Turn)
         {
-            //insert turn trasnition
-            //p2fire.SetActive(true);
-            //Invoke("P2EndTurn(p2fire)", 3);
-
             gameState = GameState.Player2Turn;
             tankController1.totalDistance = 0f;
             tankController1.shotMissile = false;
@@ -129,10 +123,6 @@ public class GameManager : MonoBehaviour
         }
         else if (gameState == GameState.Player2Turn)
         {
-            //insert turn transition
-            //p1fire.SetActive(true);
-            //Invoke("P1EndTurn(p1fire)", 3);
-
             gameState = GameState.Player1Turn;
             tankController2.totalDistance = 0f;
             tankController2.shotMissile = false;

@@ -18,6 +18,6 @@ public class PlayerTwoAnimation : MonoBehaviour
             player2.SetActive(true);
             GetComponent<Animator>().Play("player2_fade");
             player2.SetActive(false);
-        }        
+        }
     }
 }

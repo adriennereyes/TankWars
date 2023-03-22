@@ -17,7 +17,6 @@ public class PlayerOneAnimation : MonoBehaviour
         {
             player1.SetActive(true);
             GetComponent<Animator>().Play("player1_fade");
-            //player1.SetActive(false);
-        }        
+        }
     }
 }

@@ -57,13 +57,6 @@ public class TankAiming : MonoBehaviour
             currentAngle -= 180;
         }
 
-        // Adjust the angle if necessary
-        // if (currentAngle < 0 && direction == 1) {
-        //     currentAngle = 0;
-        // } else if (currentAngle > 180 && direction == -1) {
-        //     currentAngle = 180;
-        // }
-
         // Set the rotation of the game object and arrow sprite
         transform.rotation = Quaternion.Euler(0, 0, currentAngle);
         arrowSprite.transform.rotation = Quaternion.Euler(0, 0, currentAngle);;
