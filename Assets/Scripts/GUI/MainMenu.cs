@@ -8,16 +8,24 @@ public class MainMenu : MonoBehaviour
 {
     public GameObject highScorePanel;
     public TextMeshProUGUI highScoreText;
+    public AudioClip musicClip;
+    private AudioSource audioSource;
 
 
     private void Start()
     {
         highScorePanel.SetActive(false);
         highScoreText.text = $"Player 1 Wins: {GameData.playerOneTotalWins}\nPlayer 2 Wins: {GameData.playerTwoTotalWins}";
+
+        audioSource = gameObject.AddComponent<AudioSource>();
+        audioSource.clip = musicClip;
+        audioSource.loop = true;
+        audioSource.Play();
     }
 
     public void Play()
     {
+        audioSource.Stop();
         SceneManager.LoadScene("Game 1");
         SceneManager.UnloadSceneAsync("MainMenu");
     }

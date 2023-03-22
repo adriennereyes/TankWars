@@ -78,7 +78,7 @@ public class GameManager : MonoBehaviour
     void ActivateWind()
     {
         windCount++;
-        if (windCount % 3 == 0)
+        if (windCount % 4 == 0)
         {
             wiggleScript.stopWiggle();
             wind1.gameObject.SetActive(false);
@@ -118,7 +118,7 @@ public class GameManager : MonoBehaviour
             tankController2.enabled = true;
             tankShooting2.enabled = true;
             tankAiming2.enabled = true;
-            ActivateWind();
+            // ActivateWind();
             StartCoroutine(ShowPlayerMessage("Player 2 Fire"));
         }
         else if (gameState == GameState.Player2Turn)
@@ -131,7 +131,7 @@ public class GameManager : MonoBehaviour
             tankController1.enabled = true;
             tankShooting1.enabled = true;
             tankAiming1.enabled = true;
-            ActivateWind();
+            // ActivateWind();
             StartCoroutine(ShowPlayerMessage("Player 1 Fire"));
         }
     }

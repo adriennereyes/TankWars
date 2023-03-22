@@ -31,18 +31,27 @@ public class PauseScreen : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Tab))
         {
-            Pause();
+            if (isPaused)
+            {
+                Resume();
+            }
+            else
+            {
+                Pause();
+            }
         }
     }
 
     void Pause()
     {
+        isPaused = true;
         Time.timeScale = 0;
         pausePanel.gameObject.SetActive(true);
     }
 
     public void Resume()
     {
+        isPaused = false;
         Time.timeScale = 1;
         pausePanel.gameObject.SetActive(false);
     }
