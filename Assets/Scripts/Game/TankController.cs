@@ -81,8 +81,6 @@ public class TankController : MonoBehaviour
             
             if (gameObject.name == "PlayerOneTank")
             {
-                
-                Debug.Log("decreasing p1 gas");
                 gasbar.UpdateGasbar(maxDistance, distanceLeft);
             }
             else if (gameObject.name == "PlayerTwoTank")
